@@ -1,0 +1,42 @@
+@use '../../scss/' as *;
+
+.user {
+    font-size: 2.5rem;
+    font-weight: 600;
+
+    @include flex(center, unset);
+
+    .avatar {
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+
+        @include mobile {
+            width: 30px;
+            margin-right: 0;
+        }
+    }
+    span {
+        font-size: 1.7rem;
+        @include mobile {
+            display: none;
+        }
+    }
+}
+
+.header {
+    height: $header-height;
+    width: 100%;
+
+    .wrapper {
+        @include flex(center, space-between);
+        height: 100%;
+    }
+
+    @include mobile {
+        height: $header-height - 5rem;
+        margin-bottom: 20px;
+    }
+
+}

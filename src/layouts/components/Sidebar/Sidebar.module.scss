@@ -1,0 +1,156 @@
+@use '../../../scss/' as *;
+.sidebar {
+    background-color: $body-bg;
+    z-index: 99;
+    border-right: 2px solid #3a3939;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: $sidebar-width;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    @include mobile {
+        position: fixed;
+        border-color: transparent;
+        transform: translateX(-100%);
+    }
+}
+
+.inner {
+    padding: 25px 0;
+}
+.logo-img {
+    margin: auto;
+    width: 120px;
+    height: 33px;
+    background-image: url('https://res.cloudinary.com/api-media/image/upload/v1662868703/MovieApp/logo/netflix_l5rwid.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.search-btn {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: $txt-color;
+    background-color: $bg-color;
+    width: 45px;
+    height: 45px;
+}
+.menu-item {
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    padding: 14px 23px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $txt-color;
+    transition: background-color, color ease-in-out 0.2s;
+    border: none;
+    background-color: transparent;
+    &.active {
+        color: $white;
+        background-color: #3f3f3fe8;
+        position: relative;
+        ::after {
+            content: "";
+            position: absolute;
+            background-color: $main-color;
+            height: 100%;
+            width: 2.5px;
+            top: 0;
+            left: 1px;
+        }
+    }
+    .icon {
+        display: flex;
+        min-width: 50px;
+    }
+
+    &:hover {
+        color: $white;
+    }
+}
+
+.menu {
+    .title {
+        margin-left: 24px;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+}
+.list-menu {
+    margin: 15px 0 20px 0px;
+}
+
+.search {
+    margin: 25px 10px 30px;
+    height: 44px;
+}
+/*Collapse*/
+
+.sidebar.collapse {
+    width: $sidebar-collapse-width;
+
+    .inner {
+        padding: 40px 0 0;
+        @include flex(center, center);
+        flex-direction: column;
+    }
+    .logo-img {
+        width: 19px;
+        background-image: url('https://res.cloudinary.com/api-media/image/upload/v1662868707/MovieApp/logo/logo_llccaj.png');
+    }
+
+    .menu {
+        margin: 0;
+        .list-menu {
+            margin: 0;
+        }
+        .title,
+        .page {
+            display: none;
+        }
+        .menu-item {
+            .icon {
+                min-width: unset;
+            }
+        }
+    }
+}
+
+.navbar {
+    display: none;
+    padding: 25px 20px;
+    .toggle-menu {
+        font-size: 3rem;
+    }
+
+    @include mobile {
+        @include flex(center, space-between);
+
+        & > .logo-img {
+            margin: 0;
+        }
+    }
+}
+.overlay {
+    @include wrapper(fixed);
+    @include overlay();
+    display: none;
+    z-index: 10;
+}
+.menu-checkbox {
+    display: none;
+    &:checked {
+        & ~ .sidebar {
+            transform: translateX(0);
+        }
+
+        & ~ .overlay {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,112 @@
+@use '../../scss/' as *;
+
+.slider {
+    margin-bottom: 5rem;
+}
+.loading,
+.slide-item {
+    padding-top: 40%;
+    width: 100%;
+
+    @include mobile {
+        padding-top: 80%;
+    }
+}
+
+.slide-item {
+    border-radius: 10px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(to bottom, #1c1c1ebd, rgba($black, 0));
+    }
+
+    .overlay {
+        border-radius: 10px;
+        background-color: rgba($black, 0.35);
+        @include wrapper(absolute);
+    }
+    .content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .info {
+            width: 60%;
+            padding: 0 5rem;
+
+            @include tablet {
+                width: 100%;
+            }
+
+            & > * ~ * {
+                margin-top: 3rem;
+            }
+
+            .title {
+                font-size: 5rem;
+                font-weight: 700;
+                line-height: 1;
+
+                @include tablet {
+                    font-size: 3rem;
+                }
+            }
+
+            .overview {
+                font-size: 1.6rem;
+                font-weight: 500;
+                @include lineClamp(2.2rem, 3);
+                @include tablet {
+                    font-size: 1.4rem;
+                }
+                @include mobile {
+                    display: none;
+                }
+            }
+
+            .btns > * ~ * {
+                margin-left: 1rem;
+            }
+
+            .btns,
+            .title,
+            .overview {
+                opacity: 0;
+                transform: translateY(-100px);
+                transition: transform 0.5s ease, opacity 0.5s ease;
+            }
+        }
+    }
+
+    &.active > .content {
+        img {
+            transform: scale(1);
+        }
+    }
+
+    &.active > .content > .info {
+        .btns,
+        .title,
+        .overview {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .title {
+            transition-delay: 0.3s, 0.3s;
+        }
+
+        .overview {
+            transition-delay: 0.5s, 0.5s;
+        }
+    }
+}

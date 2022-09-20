@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.53cfca2e.css",
+    "main.js": "/static/js/main.f5a83106.js",
+    "static/media/boxicons.svg": "/static/media/boxicons.045b05bf2dc119267a90.svg",
+    "static/media/footer-bg.jpg": "/static/media/footer-bg.67e95f05e76a8cebf7e2.jpg",
+    "static/media/boxicons.eot": "/static/media/boxicons.092b78589f3f53e60030.eot",
+    "static/media/boxicons.woff": "/static/media/boxicons.0f4528cf3c75a4b361c0.woff",
+    "static/media/boxicons.ttf": "/static/media/boxicons.cbd149c55e2396cb52e7.ttf",
+    "static/media/logo.png": "/static/media/logo.9f5c301b95282293ee47.png",
+    "static/media/boxicons.woff2": "/static/media/boxicons.8d765747a5588f36ff61.woff2",
+    "static/media/no_image.png": "/static/media/no_image.1783e7ae44ca1d6a4fce.png",
+    "static/media/no_results.png": "/static/media/no_results.41ade0ad50c52a37aa05.png",
+    "static/media/tmovie.png": "/static/media/tmovie.67797e942e59deb68592.png",
+    "static/media/netflix.png": "/static/media/netflix.e615b40377e7d85b660c.png",
+    "index.html": "/index.html",
+    "main.53cfca2e.css.map": "/static/css/main.53cfca2e.css.map",
+    "main.f5a83106.js.map": "/static/js/main.f5a83106.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.53cfca2e.css",
+    "static/js/main.f5a83106.js"
+  ]
+}

@@ -1,0 +1,186 @@
+@use './scss/' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $font-family;
+    font-weight: 400;
+    line-height: 1.6rem;
+
+    background-color: $body-bg;
+    color: $white;
+
+    @include mobile {
+        margin-bottom: 3rem;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+button,
+input {
+    outline: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+iframe {
+    border: 0;
+}
+
+@media (hover: hover) {
+    a:hover {
+        color: $main-color;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+.main {
+    display: flex;
+    flex: 1;
+    @include tablet {
+        flex-direction: column;
+    }
+}
+.container {
+    padding: 0 3rem;
+    width: calc(100% - $sidebar-width);
+    
+    @include tablet {
+        width: calc(100% - $sidebar-collapse-width);
+        padding: 0 2rem;
+    }
+    @include mobile {
+        width: 100%;
+    }
+
+}
+
+.auth-page {
+    @include flex(center, center);
+    flex-direction: column;
+    height: 100vh;
+    background-color: #121212;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.m-col {
+    @include mobile {
+        flex-direction: column;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+.fs-14 {
+    font-size: 1.4rem;
+}
+.mt-5 {
+    margin-top: 50px;
+}
+
+.mt-4 {
+    margin-top: 40px;
+}
+
+.mb-4 {
+    margin-top: 40px;
+}
+
+.mb-3 {
+    margin-bottom: 30px;
+}
+
+.mb-2 {
+    margin-bottom: 20px;
+}
+
+.mx-1 {
+    margin: 0 10px;
+}
+
+.mx-2 {
+    margin: 0 20px;
+}
+.section {
+    padding: 0 2rem;
+}
+
+.section__header {
+    @include flex(center, space-between);
+}
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgb(92 92 92);
+}
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #1E1E1E inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.noUi-horizontal {
+    height: 4px;
+}
+.noUi-connect {
+    background-color: $main-color;
+}
+
+.noUi-target {
+    border: none;
+    padding-right: 12px;
+}
+.noUi-horizontal .noUi-handle {
+    width: 20px;
+    height: 20px;
+    top: -8px;
+    outline: none;
+    background: rgba(36, 36, 36, 1);
+    border-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
+    background-color: #313131;
+}
+
+.noUi-handle {
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+}
+
+.noUi-handle:before,
+.noUi-handle:after {
+    content: none;
+}

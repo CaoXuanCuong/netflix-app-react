@@ -1,0 +1,89 @@
+@use '../../../scss/' as *;
+
+.loading,
+.movie-card {
+    width: 100%;
+    padding-top: 170%;
+
+    @include tablet {
+        padding-top: 150%;
+    }
+}
+
+.movie-card {
+    position: relative;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: $border-radius;
+    margin-bottom: 10px;
+    transform: scale(1);
+    background-color: #29292b;
+
+    &::before {
+        content: '';
+        @include wrapper(absolute);
+        background-color: $black;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: $border-radius;
+    }
+
+    .actions {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .play {
+        @include translate(50%, 50%, 0);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background-color: $main-color;
+        transition: transform 0.3s ease;
+        i {
+            font-size: 4rem;
+            color: $white;
+        }
+    }
+    @media (hover: hover) and (pointer: fine) {
+        &:hover::before {
+            opacity: 0.8;
+        }
+        &:hover .play {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+}
+
+.name{
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.time, .remove {
+    display: flex;
+    align-items: center;
+}
+.watched {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    .since-time {
+        font-size: 1.2rem;
+        color: #ccc;
+    }
+}
+.remove {
+    font-size: 1.2rem;
+    color: red;
+    background-color: transparent;
+    border: none;
+    i {
+        font-size: 1.7rem;
+        margin-right: 4px;
+    }
+}

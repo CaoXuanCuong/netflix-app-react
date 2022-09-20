@@ -1,0 +1,14 @@
+@use '../../../scss/' as *;
+.wrapper {
+    padding: 12px 24px;
+    width: 100%;
+}
+
+.list {
+    margin-top: 25px;
+    .title {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+}

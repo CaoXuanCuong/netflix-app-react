@@ -1,0 +1,168 @@
+
+@use '../../scss/' as *;
+.infomation{
+    margin-top: 40px;
+    @include flex(flex-start, space-between);
+    @include mobile {
+        flex-direction: column-reverse;
+    }
+
+    .user-photo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include mobile {
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+        .avatar {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        label {
+            font-size: 1.6rem;
+            font-weight: 500;
+            background-color: $bg-color;
+            padding: 15px 20px;
+            border-radius: 30px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+    }
+}
+.user-info {
+   flex: 1;
+   width: 100%;
+   
+}
+.info-group {
+    margin-bottom: 30px;
+    
+    .info-title {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: $txt-color;
+    }
+
+    .edit-input {
+        width: 50%;
+        background-color: $bg-color;
+        border: none;
+        color: $white;
+        padding: 8px;
+        font-size: 1.6rem;
+        border-radius: 8px;
+        display: block;
+
+        & + .edit-input {
+            margin-top: 10px;
+        }
+    }
+
+    .info-item {
+        display: flex;
+        align-items: flex-start;
+    }
+}
+
+.edit {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+
+
+.edit-btn {
+    margin-left: 20px;
+    background-color: transparent;
+    font-size: 2.3rem;
+    border: none;
+    color: $txt-color;
+    line-height: 0;
+}
+
+.title{
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.password {
+    display: none;
+}
+
+.action {
+    margin-top: 10px;
+    .change-password-btn, .submit-btn {
+        background-color: $bg-color;
+        padding: 10px 20px;
+        border-radius: 30px;
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: 500;
+        cursor: pointer;
+        color: $white;
+        border: none;
+    }
+
+    .submit-btn {
+        display: none;
+    }
+}
+
+.change-pass-check{
+    display: none;
+    &:checked {
+        & ~ .password {
+            display: block;
+        }
+
+        & ~ .action {
+            .change-password-btn {
+                text-indent: -9999px;
+                line-height: 0;
+                margin-right: 10px;
+                &::after{
+                    content: 'Cancel';
+                    text-indent: 0;
+                    display: block;
+                    line-height: initial;
+                }
+            }
+
+            .submit-btn {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.load {
+    text-align: center;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: $black;
+    transform: translate(-50%, -50%);
+    i {
+        font-size: 5rem;
+        animation: RotateLoad 1s linear infinite;
+    }
+}
+
+@keyframes RotateLoad {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

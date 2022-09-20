@@ -1,0 +1,13 @@
+@use '../../scss/breakpoint' as *;
+.history {
+    .title {
+        font-size: 3rem;
+        margin-top: 50px;
+        @include mobile {
+            margin-top: 20px;
+        }
+    }
+}
+.tabs {
+    margin: 20px 0 30px;
+}

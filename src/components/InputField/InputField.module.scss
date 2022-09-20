@@ -1,0 +1,40 @@
+.form-group {
+    & + .form-group {
+        margin-top: 25px;
+    }
+    .title-form{
+        font-size: 1.5rem;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .form-input {
+        border-radius: 3px;
+        border: 1px solid transparent;
+        font-size: 1.6rem;
+        padding: 12px;
+        display: block;
+        width: 100%;
+        background-color: #1E1E1E;
+        color: #fff;
+        transition: border 0.4s ease;
+        &:focus{
+            border-color: #FCC7C3;
+        }
+    }
+}
+
+.form-group.invalid {
+    .form-input {
+        color: #ff4c3a;
+        border: 1px solid #ff4c3a;
+    }
+}
+.error-msg {
+    margin-top: 6px;
+    color: #ff4c3a;
+    line-height: 15px;
+    font-size: 1.3rem;
+}
+

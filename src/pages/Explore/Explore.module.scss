@@ -1,0 +1,65 @@
+@use '../../scss/' as *;
+.heading {
+    margin: 40px 0 20px;
+
+    @include mobile {
+        margin: 20px 0;
+    }
+    .title {
+        font-size: 3rem;
+        font-weight: 600;
+    }
+}
+
+.content {
+    display: flex;
+    flex: 1;
+}
+.selection {
+    @include flex(center, space-between);
+    margin-bottom: 30px;
+
+    .filter-icon {
+        display: none;
+        fill: $white;
+
+        @include tablet {
+            display: block;
+        }
+
+    }
+}
+.input-checked:checked ~ .filter {
+    transform: translateX(0%);
+}
+
+.input-checked:checked ~ .overlay {
+    display: block;
+}
+
+.filter {
+    z-index: 1;
+    transition: transform 0.3s ease;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    @include tablet {
+        transform: translateX(100%);
+    }
+}
+
+.overlay {
+    @include wrapper(fixed);
+    @include overlay();
+    display: none;
+}
+.container {
+    padding: 0 3rem;
+    width: calc(100% - $sidebar-width);
+
+    @include tablet {
+        width: 100%;
+        padding: 0 2rem;
+    }
+}

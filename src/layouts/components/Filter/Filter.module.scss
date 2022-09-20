@@ -1,0 +1,93 @@
+@use '../../../scss/' as *;
+
+.filter {
+    background-color: #333333;
+    padding: 10px 20px;
+    height: 100vh;
+}
+.filter-by {
+    max-width: $sidebar-width - 30px;
+    margin-bottom: 15px;
+
+    &.active {
+        .content {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .toggle {
+            i {
+                transform: rotate(0);
+            }
+        }
+    }
+}
+
+.heading {
+    @include flex(center, space-between);
+    .title {
+        font-size: 1.9rem;
+        font-weight: 600;
+    }
+    .toggle {
+        background-color: transparent;
+        border: none;
+        color: $white;
+        font-size: 2.8rem;
+
+        i {
+            transform: rotate(-90deg);
+            transition: transform 0.3s ease;
+        }
+    }
+}
+
+.content {
+    -webkit-transition: max-height ease 0.5s, opacity ease 0.4s;
+    -moz-transition: max-height ease 0.5s, opacity ease 0.4s;
+    -ms-transition: max-height ease 0.5s, opacity ease 0.4s;
+    -o-transition: max-height ease 0.5s, opacity ease 0.4s;
+    transition: max-height ease 0.5s, opacity ease 0.4s;
+    max-height: 0;
+    opacity: 0;
+}
+
+.inner {
+    h3 {
+        color: #d6d6d7;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+}
+
+.genres-list {
+    overflow-y: auto;
+    max-height: 190px;
+    .genres-item {
+        display: inline-block;
+        padding: 5px;
+        button.genres-btn {
+            padding: 6px 12px;
+            font-size: 1.4rem;
+            &.active {
+                background-color: $main-color;
+                color: $white;
+            }
+        }
+    }
+}
+
+.section {
+    border-bottom: 1px solid #555;
+    padding: 15px 0;
+}
+
+.range-slider {
+    padding: 10px 0;
+}
+
+.value-slider {
+    @include flex(center, space-between);
+    margin-top: 10px;
+    font-size: 1.4rem;
+}

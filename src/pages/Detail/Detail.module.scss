@@ -1,0 +1,248 @@
+@use '../../scss/' as *;
+
+.content {
+    flex: 1;
+}
+.banner {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include mobile {
+        margin-bottom: 90px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include overlay();
+    }
+}
+
+.movie-content {
+    @include flex(flex-start, flex-start);
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -250px;
+    position: relative;
+    padding: 0 20px;
+    margin-bottom: 30px;
+
+    @include mobile {
+        margin-top: -285px;
+    }
+    .poster {
+        flex: 1;
+
+        @include mobile {
+            display: none;
+        }
+
+        &-img {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: $border-radius;
+            padding-top: 165%;
+        }
+    }
+
+    .info {
+        width: 75%;
+        padding-left: 20px;
+        position: relative;
+
+        @include mobile {
+            width: 100%;
+            padding-left: 0;
+        }
+
+        & > * {
+            margin-bottom: 20px;
+        }
+
+        .title {
+            border-radius: unset;
+            font-size: 4rem;
+            line-height: 1;
+        }
+
+        .genres {
+            > * {
+                margin: 5px 8px 0px 0px;
+            }
+
+            .genres-item {
+                border: 2px solid $white;
+                font-size: 1.2rem;
+                font-weight: 600;
+                background-color: $body-bg;
+            }
+        }
+    }
+}
+
+.casts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 30px;
+    -webkit-column-gap: 40px;
+    column-gap: 40px;
+    margin-bottom: 20px;
+}
+.cast-item {
+    display: flex;
+    align-items: center;
+    .cast-img {
+        flex-shrink: 0;
+        width: 55px;
+        height: 55px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .character {
+        margin-left: 20px;
+        line-height: 2.2rem;
+        .cast-name {
+            font-size: 1.7rem;
+            font-weight: 600;
+        }
+        .cast-character {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #989888;
+        }
+    }
+}
+
+.video {
+    margin-bottom: 30px;
+
+    &__title {
+        margin-bottom: 15px;
+        h2 {
+            margin-bottom: 10px;
+            font-size: 1.9rem;
+            font-weight: 600;
+        }
+    }
+}
+
+.rating,
+.description {
+    display: flex;
+    align-items: flex-end;
+}
+.description {
+    font-size: 1.5rem;
+    padding: 0 12px;
+    font-weight: 500;
+    border-right: 2px solid #3f3f3f;
+
+    &:first-child {
+        padding-left: 0;
+    }
+    &:last-child {
+        border: none;
+    }
+    & span:last-child {
+        margin-left: 10px;
+    }
+}
+.star {
+    fill: #ffc000;
+}
+
+.tabs {
+    border-top: 1px solid $bg-color;
+    padding: 25px 0 30px;
+    button {
+        background-color: transparent;
+        border: none;
+        color: #989888;
+        font-size: 2rem;
+        font-weight: 600;
+        transition: all ease 0.3s;
+        border-bottom: 2px solid transparent;
+        padding-bottom: 6px;
+
+        &.active {
+            border-color: $main-color;
+            transform: translateY(-8px);
+            color: $white;
+        }
+        & + button {
+            margin-left: 20px;
+        }
+    }
+}
+
+.slogan {
+    font-size: 1.7rem;
+    font-weight: 500;
+    font-style: italic;
+    text-align: center;
+    margin: 25px 0;
+    color: #989888;
+}
+
+.detail {
+    margin-bottom: 30px;
+    h4 {
+        margin-bottom: 10px;
+        font-size: 1.9rem;
+        font-weight: 600;
+    }
+    p {
+        font-size: 1.7rem;
+        color: #989888;
+        line-height: 2.5rem;
+
+        @include tablet {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.result {
+    display: flex;
+    align-items: flex-start;
+    @include mobile {
+        flex-direction: column;
+    }
+}
+.trailer-detail {
+    flex: 1;
+    max-width: 450px;
+
+    @include mobile {
+        width: 100%;
+        max-width: unset;
+    }
+}
+.infomation {
+    margin-right: 30px;
+    width: 100%;
+    flex: 1;
+}
+
+.watch {
+    button {
+        & + button {
+            margin-left: 10px;
+        }
+    }
+}
+
+.left-side-bar {
+    width: $similar-sidebar-width;
+}
+

@@ -1,0 +1,33 @@
+@mixin flex($align-item, $justify-content) {
+    display: flex;
+    align-items: $align-item;
+    justify-content: $justify-content;
+}
+
+@mixin overlay {
+    background-color: rgba($color: #000000, $alpha: 0.6);
+}
+
+@mixin lineClamp($line-height, $line-clamp) {
+    line-height: $line-height;
+    height: $line-height * $line-clamp;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line-clamp;
+}
+
+@mixin wrapper($position) {
+    position: $position;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@mixin translate($top, $left, $scale: 1) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate(-$top, -$left) scale($scale);
+}

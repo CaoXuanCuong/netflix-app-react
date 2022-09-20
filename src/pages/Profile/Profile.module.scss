@@ -1,0 +1,9 @@
+@use '../../scss/breakpoint' as *;
+.title{
+    margin-top: 50px;
+    font-size: 3rem;
+    font-weight: 600;
+    @include mobile {
+        margin-top: 20px;
+    }
+}

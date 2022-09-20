@@ -1,0 +1,27 @@
+@use '../../scss/variables' as *;
+.form-login {
+    .form-btn {
+        margin-top: 40px;
+        padding: 12px;
+        height: 45px;
+    }
+}
+
+.load {
+    line-height: 0;
+    font-size: 24px;
+    color: $white;
+    animation: SearchLoading 0.8s linear infinite;
+    i {
+        margin: 0;
+    }
+}
+
+@keyframes SearchLoading {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

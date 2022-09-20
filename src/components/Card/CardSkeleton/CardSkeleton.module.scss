@@ -1,0 +1,15 @@
+@use '../../../scss/variables' as *;
+.card-skeleton:empty {
+    border-radius: $border-radius;
+    background-color: #29292b;
+    animation: skeleton-anim 1s infinite alternate;
+    display: inline-block;
+}
+@keyframes skeleton-anim {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}

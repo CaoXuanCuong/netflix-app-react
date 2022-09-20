@@ -1,0 +1,59 @@
+@use '../../../scss/' as *;
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 3rem;
+
+    @include tablet {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    &__loadmore {
+        text-align: center;
+    }
+}
+
+.load-more {
+    text-align: center;
+    margin-bottom: 20px;
+    i {
+        font-size: 3rem;
+        animation: RotateLoad 1s linear infinite;
+    }
+}
+
+@keyframes RotateLoad {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.no-results {
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: none;
+    margin-top: 50px;
+    img {
+        width: 300px;
+        height: 300px;
+    }
+    h3 {
+        margin-top: 30px;
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+}
+
+.require-login {
+    font-size: 1.5rem;
+    font-weight: 400;
+    a {
+        text-decoration: underline;
+        color: $main-color;
+    }
+}
