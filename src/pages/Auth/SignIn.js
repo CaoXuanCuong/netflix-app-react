@@ -4,11 +4,9 @@ import classNames from 'classnames/bind'
 import styles from './Auth.module.scss';
 import { Link } from 'react-router-dom';
 import config from '~/configs';
-import apiConfig from '~/api/apiConfig';
 
 const cx = classNames.bind(styles);
 const SignIn = () => {
-  console.log(apiConfig.baseURL);
   return (
     <div className={cx('auth')}>
         <h2 className={cx('title')}>Sign in to your account</h2>
