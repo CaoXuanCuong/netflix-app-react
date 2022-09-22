@@ -38,6 +38,8 @@
 }
 
 .filter {
+    max-width: 300px;
+    width: 100%;
     z-index: 1;
     transition: transform 0.3s ease;
     position: fixed;
@@ -46,7 +48,7 @@
     bottom: 0;
     @include tablet {
         transform: translateX(100%);
-    }
+    } 
 }
 
 .overlay {

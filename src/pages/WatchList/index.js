@@ -29,7 +29,7 @@ const WatchList = () => {
                         {movies.length === 0 ? (
                             <div className={cx('no-results')}>
                                 <img src={images.noResults} alt="" />
-                                <h3>Your recently watched films for this type is empty. Let's watch some!</h3>
+                                <h3>Your watch list is empty</h3>
                             </div>
                         ) : (
                             movies.slice(0).reverse().map((result, index) => (

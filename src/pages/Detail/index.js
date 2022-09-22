@@ -12,7 +12,6 @@ import styles from './Detail.module.scss';
 import classNames from 'classnames/bind';
 import Similar from '~/layouts/components/Similar';
 import Sidebar from '~/layouts/components/Sidebar';
-import axios from 'axios';
 import { ToastContainer } from 'react-toastify';
 import { AuthContext } from '~/context/AuthContext';
 import message from '~/utils/message';
@@ -221,15 +220,20 @@ const Loading = () => {
                 <div className={cx('info')}>
                     <CardSkeleton width="100%" height={50} className={cx('title')} />
                     <div className={cx('genres')}>
-                        <CardSkeleton width={80} height={25} />
-                        <CardSkeleton width={80} height={25} />
-                        <CardSkeleton width={80} height={25} />
+                        <CardSkeleton width={80} height={30} />
+                        <CardSkeleton width={80} height={30} />
+                        <CardSkeleton width={80} height={30} />
+                    </div>
+                    <div className={cx('rating')}>
+                        <div className={cx('description')}>
+                            <CardSkeleton width={350} height={50} />
+                        </div>
                     </div>
                 </div>
             </div>
             <div className="mx-2">
                 <div className={cx('tabs')}>
-                    <CardSkeleton width={200} height={25} />
+                    <CardSkeleton width={300} height={40} />
                 </div>
 
                 <div className={cx('result')}>

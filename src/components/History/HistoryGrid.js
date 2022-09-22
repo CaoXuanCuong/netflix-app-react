@@ -63,7 +63,7 @@ const HistoryGrid = ({currentTab}) => {
                         {history.length === 0 ? (
                             <div className={cx('no-results')}>
                                 <img src={images.noResults} alt="" />
-                                <h3>Your recently watched films for this type is empty. Let's watch some!</h3>
+                                <h3>Your recently watched films is empty. Let's watch some!</h3>
                             </div>
                         ) : (
                             history.slice(0).reverse().map((result, index) => (

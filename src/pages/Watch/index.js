@@ -4,13 +4,13 @@ import styles from './Watch.module.scss';
 import classNames from 'classnames/bind';
 import EmbedMovie from '~/components/EmbedVideo/EmbedMovie';
 import EmbedTv from '~/components/EmbedVideo/EmbedTv';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Sidebar from '~/layouts/components/Sidebar';
 import { StarIcon } from '~/components/Icons';
 import SeasonList from '~/layouts/components/Selection/TV/SeasonList';
 import Recommend from '~/layouts/components/Selection/Movie/Recommend';
 import { AuthContext } from '~/context/AuthContext';
-import axios from 'axios';
+import config from '~/configs';
 import userApi from '~/api/userApi';
 import { HISTORY_STORAGE_TOKEN_NAME } from '~/utils/constants';
 const cx = classNames.bind(styles);
@@ -25,6 +25,8 @@ const Watch = () => {
     const [currentSeason, setCurrentSeason] = useState(1);
     const [currentEpisode, setCurrentEpisode] = useState(1);
     const [nameEpisode, setNameEpisode] = useState('');
+
+    const navigate = useNavigate();
     useEffect(
         () => {
             const fetchApi = async () => {
@@ -106,7 +108,10 @@ const Watch = () => {
 
                                             <div className={cx('genres')}>
                                                 {item.genres.map((genre) => (
-                                                    <button key={genre.id}>{genre.name}</button>
+                                                    <button 
+                                                        key={genre.id} 
+                                                        onClick={() => navigate(`/explore?with_genres=${genre.id}`)}>{genre.name}
+                                                    </button>
                                                 ))}
                                             </div>
                                             <div className={cx('rate')}>
