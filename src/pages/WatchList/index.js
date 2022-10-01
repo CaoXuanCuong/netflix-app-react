@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './WatchList.module.scss';
 import classNames from 'classnames/bind';
 import MovieCard from '~/components/Card/MovieCard';
-import images from '~/assets';
-import axios from 'axios';
+import images from '~/assets/images';
 import userApi from '~/api/userApi';
 const cx = classNames.bind(styles);
 

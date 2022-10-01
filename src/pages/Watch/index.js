@@ -10,7 +10,6 @@ import { StarIcon } from '~/components/Icons';
 import SeasonList from '~/layouts/components/Selection/TV/SeasonList';
 import Recommend from '~/layouts/components/Selection/Movie/Recommend';
 import { AuthContext } from '~/context/AuthContext';
-import config from '~/configs';
 import userApi from '~/api/userApi';
 import { HISTORY_STORAGE_TOKEN_NAME } from '~/utils/constants';
 const cx = classNames.bind(styles);
@@ -106,7 +105,7 @@ const Watch = () => {
                                                 Release Date: {item.first_air_date || item.release_date}
                                             </p>
 
-                                            <div className={cx('genres')}>
+                                            <div className={cx('genres')}> 
                                                 {item.genres.map((genre) => (
                                                     <button 
                                                         key={genre.id} 

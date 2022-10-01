@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link, Navigate, Outlet } from 'react-router-dom'
-import images from '~/assets'
+import images from '~/assets/images'
 import { AuthContext } from '~/context/AuthContext';
 import config from '~/configs';
 

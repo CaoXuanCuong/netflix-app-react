@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import styles from './MovieGrid.module.scss';
 import classNames from 'classnames/bind';
-import images from '~/assets';
+import images from '~/assets/images';
 
 import MovieCard from '~/components/Card/MovieCard';
 import tmdbApi, { category as cate } from '~/api/tmdbApi';

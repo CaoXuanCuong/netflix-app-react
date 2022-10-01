@@ -2,13 +2,11 @@ import React, { useContext, useEffect, useState } from 'react'
 import styles from '../Card/MovieGrid/MovieGrid.module.scss';
 import classNames from 'classnames/bind';
 import CardDelete from '../Card/MovieCard/CardDelete';
-import images from '~/assets';
-import axios from 'axios';
+import images from '~/assets/images';
 import { AuthContext } from '~/context/AuthContext';
 import config from '~/configs';
 import { Link } from 'react-router-dom';
 import userApi from '~/api/userApi';
-import authApi from '~/api/authApi';
 import { HISTORY_STORAGE_TOKEN_NAME } from '~/utils/constants';
 const cx = classNames.bind(styles);
 

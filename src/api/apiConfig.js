@@ -1,4 +1,4 @@
-import images from '~/assets';
+import images from '~/assets/images';
 import { BASE_URL, TMDB_URL } from '~/utils/constants';
 
 const apiConfig = {

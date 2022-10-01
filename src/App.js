@@ -1,5 +1,4 @@
 import './App.scss';
-
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Detail from './pages/Detail';
 import Home from './pages/Home';
@@ -16,6 +15,7 @@ import WatchList from './pages/WatchList';
 import Protected from './components/Auth/Protected';
 import Profile from './pages/Profile';
 import ScrollToTop from './components/ScrollToTop';
+import NotFound from './pages/NotFound';
 function App() {
     const { routes } = config;
     return (
@@ -42,6 +42,7 @@ function App() {
                     <Route path={routes.explore} element={<Explore />} />
                     <Route path={routes.detail} element={<Detail />} />
                     <Route path={routes.watch} element={<Watch />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </ScrollToTop>
         </Router>

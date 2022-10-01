@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
-import logo from '~/assets/tmovie.png';
 import { category as cate } from '~/api/tmdbApi';
-import MovieSearch from '../Search';
 import Navbar from '../Navbar';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';

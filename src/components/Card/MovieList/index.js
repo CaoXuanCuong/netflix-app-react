@@ -42,12 +42,9 @@ function MovieList({ type, category }) {
                 }}
                 modules={[Navigation]}
                 navigation={true}
-                loop={true}
+                loop
                 grabCursor={true}
                 spaceBetween={20}
-                onNavigationNext={(swiper) => {
-                    swiper.slideToLoop(swiper.loopedSlides + (swiper.realIndex - 1), 300);
-                }}
                 breakpoints={{
                     0: {
                         slidesPerView: 2,

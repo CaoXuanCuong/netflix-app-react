@@ -14,6 +14,7 @@ const MovieSearch = ({ keyword: key, popup, open, onClosePopUp = () => {} }) => 
 
     const gotoSearch = useCallback(() => {
         if (keyword.trim().length > 0) {
+            setKeyWord('');
             navigate({
                 pathname: '/search',
                 search: createSearchParams({
@@ -28,7 +29,6 @@ const MovieSearch = ({ keyword: key, popup, open, onClosePopUp = () => {} }) => 
             e.preventDefault();
             if (e.keyCode === 13) {
                 gotoSearch();
-                setKeyWord('');
                 onClosePopUp(true);
             }
             else if (e.keyCode == 27) {
