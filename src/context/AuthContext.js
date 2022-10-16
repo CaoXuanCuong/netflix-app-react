@@ -20,8 +20,7 @@ function AuthContextProvider({ children }) {
                     type: 'SET_AUTH',
                     payload: { isAuthenticated: true, user: res.user },
                 });
-            }
-            else {
+            } else {
                 dispatch({
                     type: 'SET_AUTH',
                     payload: {},
@@ -35,14 +34,15 @@ function AuthContextProvider({ children }) {
                 payload: { isAuthenticated: false, user: null },
             });
         }
-
     };
 
-    useEffect(() => {
-        loadUser();
-    },
-    // eslint-disable-next-line
-    [authState.isAuthenticated]);
+    useEffect(
+        () => {
+            loadUser();
+        },
+        // eslint-disable-next-line
+        [authState.isAuthenticated],
+    );
 
     const loginUser = async (formInput) => {
         try {
@@ -64,7 +64,7 @@ function AuthContextProvider({ children }) {
             type: 'SET_AUTH',
             payload: { isAuthenticated: true, user },
         });
-    }
+    };
     const register = async (formInput) => {
         try {
             const res = await authApi.register(formInput);
@@ -72,11 +72,11 @@ function AuthContextProvider({ children }) {
                 localStorage.setItem(LOCAL_STORAGE_TOKEN_NAME, res.accessToken);
             }
             await loadUser();
-            
-            return res;
+
+            return res.data;
         } catch (error) {
-            console.log(error)
-            return error.response;
+            console.log(error);
+            return error.response.data;
         }
     };
     const logout = async () => {
