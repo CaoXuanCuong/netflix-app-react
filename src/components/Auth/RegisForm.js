@@ -10,7 +10,6 @@ import InputField from '../InputField';
 import { useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
-
 const RegisForm = () => {
     const [isloading, setIsLoading] = useState(false);
     const { register } = useContext(AuthContext);
@@ -26,19 +25,20 @@ const RegisForm = () => {
                     .max(20, 'Fullname must be 6 to 20 characters'),
                 email: Yup.string().email('Invalid email format').required('The Email field is required'),
                 password: Yup.string()
-                .trim()
-                .required('The Password field is required')
-                .min(6, 'Password must be 6 to 20 characters')
-                .max(20, 'Password must be 6 to 20 characters'),
+                    .trim()
+                    .required('The Password field is required')
+                    .min(6, 'Password must be 6 to 20 characters')
+                    .max(20, 'Password must be 6 to 20 characters'),
             })}
             onSubmit={async (values, { setFieldError }) => {
                 setIsLoading(true);
                 const result = await register(values);
                 setIsLoading(false);
-                if (result.success) {
-                    navigate('/');
-                } else {
+                console.log(result);
+                if (!result.success) {
                     setFieldError('email', result.message);
+                } else {
+                    navigate('/');
                 }
             }}
         >
@@ -46,30 +46,29 @@ const RegisForm = () => {
                 const { values, initialValues, isValid, handleChange, handleSubmit, setFieldTouched } = formik;
                 const hasChanged = !(values === initialValues);
                 return (
-                       
                     <Form className={cx('form-login')} onSubmit={handleSubmit}>
-                      <InputField
+                        <InputField
                             label="Fullname"
                             name="fullname"
                             placeholder="Fullname"
-                            type='text'
+                            type="text"
                             onChange={(e) => {
                                 setFieldTouched('fullname', false);
                                 handleChange(e);
                             }}
                         />
-                        
+
                         <InputField
                             label="Email"
                             name="email"
-                            type='email'
+                            type="email"
                             placeholder="Email"
                             onChange={(e) => {
                                 setFieldTouched('email', false);
                                 handleChange(e);
                             }}
                         />
-                        
+
                         <InputField
                             label="Password"
                             name="password"
@@ -100,6 +99,5 @@ const RegisForm = () => {
         </Formik>
     );
 };
-
 
 export default RegisForm;
