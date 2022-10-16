@@ -64,7 +64,7 @@ img {
 .container {
     padding: 0 3rem;
     width: calc(100% - $sidebar-width);
-    
+
     @include tablet {
         width: calc(100% - $sidebar-collapse-width);
         padding: 0 2rem;
@@ -72,7 +72,6 @@ img {
     @include mobile {
         width: 100%;
     }
-
 }
 
 .auth-page {
@@ -133,6 +132,24 @@ img {
     @include flex(center, space-between);
 }
 
+.spinner-container {
+    overflow: hidden;
+    @include flex(center, center);
+    height: 100vh;
+    .loading {
+        font-size: 5rem;
+        animation: Spinner 1.2s linear infinite;
+    }
+}
+@keyframes Spinner {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 html *::-webkit-scrollbar {
     border-radius: 0;
     width: 8px;
@@ -149,8 +166,8 @@ html *::-webkit-scrollbar-track {
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #1E1E1E inset !important;
-  -webkit-text-fill-color: white !important;
+    -webkit-box-shadow: 0 0 0 1000px #1e1e1e inset !important;
+    -webkit-text-fill-color: white !important;
 }
 
 .noUi-horizontal {
